@@ -1,4 +1,6 @@
 
+import java.util.ArrayList;
+
 public class Calculator {//start class
 
 	public static void main(String[] args) {//start main
@@ -6,6 +8,9 @@ public class Calculator {//start class
 		
 
 	}//end main
+	
+	
+	//this method will recieve a root to test and the terms to test
 	
 	
 	//Performs the rational roots test and returns an array of possible roots 
@@ -44,12 +49,32 @@ public class Calculator {//start class
 		
 	}//end rational roots test method
 	
-	//UNFINISHED, this method will return a list of factors of the given integer
+	//This method will return a list of factors of the given integer
 	public static int[] Factors(int number) {//start factors method
 		
-		int[] factors = new int[];
+		ArrayList<Integer> factors = new ArrayList<Integer>();
 		
-		return factors;
+		//looks at every value from 1 up to and including the number, if it divides evenly (% = 0) then it is a factor
+		for(int i = 1; i <= number; i++) {//start find factors for loop
+			
+			if(number%i == 0){//start if i is a factor
+				
+				factors.add(i);
+				
+			}//end if i is a factor
+			
+		}//end find factors for loop
+		
+		//since I already wrote the Rational Roots Test to use an array I will convert it here
+		int[] arrayFactors = new int[factors.size()];
+		
+		for(int n = 0; n < factors.size(); n++) {//start for convert to array
+			
+			arrayFactors[n] = factors.get(n);
+			
+		}//end for convert to array
+		
+		return arrayFactors;
 		
 	}//end factors method
 	

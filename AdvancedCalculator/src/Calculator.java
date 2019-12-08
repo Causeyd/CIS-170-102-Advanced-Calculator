@@ -45,6 +45,12 @@ public class Calculator {//start class
 		 //this will be where we store the results of this attempt at synthetic division
 		 int[] factored = new int[coefficients.length];
 		 
+		 if(coefficients.length <=2) {//start if is already completely factored
+			 
+			 return;
+			 
+		 }//end if is already completely factored
+		 
 		 //this integer will hold the value that we add to each term
 		 int currentAdder;
 		 
